@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <title>
+            Data Table
+        </title>
+        <link rel="stylesheet" type="text/css" href="css/datatables.min.css" />
+        <style>
+body {
+  background-color: coral;
+}
+</style>
+    </head>
+    <body>
+        <div>
+        <label><input type="checkbox" value="India" data-bind="checked:checkedValue" /> India</label>
+        <label><input type="checkbox" value="America" data-bind="checked: checkedValue" /> America</label>
+        <label><input type="checkbox" value="Australia" data-bind="checked: checkedValue" /> Australia</label>
+        <label><input type="checkbox" value="England" data-bind="checked: checkedValue" /> England</label>
+        <label><input type="checkbox" value="Chennai" data-bind="checked: checkedValue" /> Chennai</label>
+        <label><input type="checkbox" value="Mumbai" data-bind="checked: checkedValue" /> Mumbai</label>
+        <label><input type="checkbox" value="Delhi" data-bind="checked: checkedValue" /> Delhi</label>
+        <label><input type="checkbox" value="Banglore" data-bind="checked: checkedValue" /> Banglore</label>
+        <label><input type="checkbox" value="NewYork" data-bind="checked: checkedValue" /> New York</label>
+        <label><input type="checkbox" value="Washington" data-bind="checked: checkedValue" /> Washington</label>
+        <label><input type="checkbox" value="LosAngles" data-bind="checked: checkedValue" /> Los Angles</label>
+        <label><input type="checkbox" value="California" data-bind="checked: checkedValue" /> California</label>
+
+      
+        <br>
+        <br>
+
+    </div>
+    <hr>
+
+    Choose Age: <select data-bind="options:ageOption,optionsCaption:'Select Age',optionsText:'text',optionsValue:'text',value:age,event:{ change: agemodify}">
+       
+
+    </select>
+    Choose Salary: <select data-bind="options:salOption,optionsCaption:'Select Salary',optionsText:'text',optionsValue:'text',value:sal,event:{ change: salmodify}">
+
+
+
+    </select>
+    <input type="button" value="Reset All" id="reset" data-bind="click:reset" />
+    <hr>
+
+   
+        <table id="myTable" style="width: 100%;" >
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Office</th>
+                    <th>JoiningDate</th>
+                    <th>Salary</th>
+                    <th>Country</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody data-bind="dataTablesForEach : {
+                data: dataModel,
+                options: { 
+                    deferRender: true,
+                    paging: true,
+                    fixedColumns: {
+                        leftColumns: 2
+                    },
+                    scrollX: true
+                }
+            }">
+            <tr>
+               
+                <td data-bind="text:Name"></td>
+                   <td data-bind="text:Age"></td>
+                   <td data-bind="text:Office"></td>
+                   <td data-bind="text:JoiningDate"></td>
+                   <td data-bind="text:Salary"></td>
+                   <td data-bind="text:Country"></td>
+                   <td data-bind="text:city"></td>
+            </tr> 
+            </tbody>
+            </table>
+            <script data-main="script/custom/config" src="script/inbuilt/require.js"></script>
+            <script>
+            
+              
+                require(['index1'])
+           
+            </script>
+     
+        
+   
+    </body>
+</html>
+
+
+
+
